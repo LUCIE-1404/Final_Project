@@ -80,7 +80,7 @@ col1, col2 = st.columns([1, 2], gap="large")
 
 with col1:
     st.subheader("Đầu vào")
-    uploaded_file = st.file_uploader("Tải bài giảng lên đây (.mp3, .wav)", type=['mp3', 'wav', 'm4a'])
+    uploaded_file = st.file_uploader("Tải bài giảng lên đây (.mp3, .wav, .m4a)", type=['mp3', 'wav', 'm4a'])
     
     if uploaded_file is not None:
         st.audio(uploaded_file, format='audio/wav')

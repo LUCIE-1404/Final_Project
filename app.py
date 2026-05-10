@@ -41,7 +41,7 @@ DIFFICULTY_LABEL = {
     "advanced": "🔴 Nâng cao",
 }
 
-# ── Session state ─────────────────────────────────────────────────────────────
+
 if "result" not in st.session_state:
     st.session_state.result = None
 if "model_used" not in st.session_state:
@@ -76,6 +76,7 @@ with st.sidebar:
 
 # ── Main layout ───────────────────────────────────────────────────────────────
 st.title("🎓 Hệ Thống Tóm Tắt & Sinh Trắc Nghiệm Tự Động")
+
 st.caption(
     "Ứng dụng AI tối ưu hóa quá trình học tập — phân tích bài giảng trong vài chục giây."
 )
@@ -107,6 +108,34 @@ with col_input:
 
         if not is_valid:
             st.error(error_msg)
+st.markdown("*Giải pháp AI toàn diện tối ưu hóa thời gian học tập.*")
+
+col1, col2 = st.columns([1, 2], gap="large")
+
+with col1:
+    st.subheader("Đầu vào")
+    uploaded_file = st.file_uploader("Tải bài giảng lên đây (.mp3, .wav, .m4a)", type=['mp3', 'wav', 'm4a'])
+    
+    if uploaded_file is not None:
+        st.audio(uploaded_file, format='audio/wav')
+        temp_path = f"temp_{uploaded_file.name}"
+        
+        with open(temp_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+            
+        analyze_btn = st.button("🚀 Xử lý dữ liệu", type="primary", use_container_width=True)
+
+with col2:
+    st.subheader("Kết quả đầu ra")
+    if uploaded_file is not None and analyze_btn:
+        with st.spinner('⏳ Hệ thống AI đang quét và phân tích. Quá trình này có thể mất vài chục giây...'):
+            final_result, model_used = process_audio_with_gemini(temp_path)
+            
+        if model_used:
+            st.success(f"✅ Hoàn tất! (Mô hình sử dụng: {model_used})")
+            with st.container(border=True):
+                st.write(final_result)
+ main
         else:
             analyze_clicked = st.button(
                 "🚀 Phân tích bài giảng", type="primary", use_container_width=True

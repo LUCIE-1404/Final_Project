@@ -43,6 +43,6 @@ def generate_quiz(text, summary):
     prompt = f"{QUIZ_PROMPT}\n\nTranscript: {text}\nSummary: {json.dumps(summary)}"
     resp = client.models.generate_content(
         model=MODEL_NAME, contents=prompt,
-        config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.5)
+        config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1)
     )
     return parse_json(resp.text)

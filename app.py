@@ -7,7 +7,7 @@ from export import to_markdown, get_export_filename
 # 1. CẤU HÌNH TRANG
 st.set_page_config(page_title="AI Lecture Assistant", layout="wide")
 
-# Khởi tạo bộ nhớ session_state
+# Khởi tạo bộ nhớ đệm session_state, lưu trữ toàn bộ transcript, summary và quiz ổn định
 if "results" not in st.session_state:
     st.session_state.results = None
 
@@ -27,7 +27,8 @@ with col_in:
         st.audio(up_file)
         if st.button("🚀 Xử lý dữ liệu", type="primary", use_container_width=True):
             with tempfile.NamedTemporaryFile(delete=False, suffix=f".{up_file.name.split('.')[-1]}") as tmp:
-                tmp.write(up_file.getvalue())
+                tmp.write(up_file.getvalue()) #google-genai yêu cầu đường dẫn file vật lý
+                # dùng tempfile để lưu file audio tạm thời lên server
                 tmp_path = tmp.name
             try:
                 with st.status("AI đang phân tích bài giảng...", expanded=True) as s:
@@ -37,6 +38,11 @@ with col_in:
                     txt = clean_data.get("clean_transcript", raw)
                     sum_d = summarize_lecture(txt)
                     quiz_d = generate_quiz(txt, sum_d)
+                    #Hệ thống không xử lý gộp mà chia thành một Pipeline 4 bước rõ ràng để giảm thiểu sai số
+                    #Lấy Transcript thô.
+                    #Gọi AI dọn dẹp và sửa lỗi thuật ngữ chuyên ngành.
+                    #Dựa trên bản Transcript sạch để tóm tắt.
+                    #Tổng hợp cả Transcript và Tóm tắt để sinh câu hỏi trắc nghiệm logic nhất
                     
                     # Lưu kết quả
                     st.session_state.results = {
@@ -50,7 +56,9 @@ with col_in:
                 st.error(f"Lỗi hệ thống: {e}")
             finally:
                 if os.path.exists(tmp_path): os.remove(tmp_path)
-
+            # dùng try...finally, os.remove()
+            # đảm bảo dù hệ thống chạy thành công hay gặp lỗi rớt mạng, 
+            # file rác luôn được xóa đi ngay lập tức để giải phóng tài nguyên
 with col_out:
     st.subheader("Kết quả đầu ra")
     
@@ -86,7 +94,7 @@ with col_out:
                     label_visibility="collapsed"
                 )
                 
-                # Khi người dùng đã chọn một option (choice không còn là None)
+                # khi user chọn một option (choice không còn là None)
                 if choice:
                     selected_letter = choice[0] # Lấy ký tự đầu tiên 'A', 'B', 'C' hoặc 'D'
                     correct_answer = q['answer']
@@ -96,7 +104,7 @@ with col_out:
                     else:
                         st.error(f"❌ Chưa đúng! Đáp án chính xác là {correct_answer}")
                     
-                    # Tự động "sổ" phần giải thích xuống dưới
+                    # tự động sổ phần giải thích xuống dưới
                     st.info(f"💡 **Giải thích:** {q.get('explanation', 'Không có giải thích chi tiết.')}")
                 
                 st.markdown("---") # Đường kẻ phân cách giữa các câu hỏi

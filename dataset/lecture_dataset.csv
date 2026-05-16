@@ -1,0 +1,126 @@
+text,label
+"Biến trong Python dùng để lưu trữ giá trị và có thể thay đổi trong quá trình chương trình chạy.",python
+"Kiểu dữ liệu số nguyên số thực chuỗi và boolean là các kiểu cơ bản thường dùng trong Python.",python
+"Câu lệnh if else giúp chương trình rẽ nhánh dựa trên điều kiện đúng hoặc sai.",python
+"Vòng lặp for trong Python thường dùng để duyệt qua danh sách chuỗi hoặc range.",python
+"Vòng lặp while chạy lặp lại khi điều kiện vẫn còn đúng và cần tránh lặp vô hạn.",python
+"Hàm trong Python giúp tái sử dụng logic và làm chương trình dễ đọc hơn.",python
+"Tham số và giá trị trả về của hàm giúp truyền dữ liệu vào và lấy kết quả ra.",python
+"List là cấu trúc dữ liệu lưu nhiều phần tử theo thứ tự và có thể thay đổi.",python
+"Tuple giống list nhưng không thể thay đổi sau khi được tạo.",python
+"Dictionary lưu dữ liệu theo cặp khóa và giá trị rất phù hợp để biểu diễn thông tin có nhãn.",python
+"Set dùng để lưu các phần tử không trùng lặp và hỗ trợ các phép toán tập hợp.",python
+"Xử lý ngoại lệ bằng try except giúp chương trình không bị dừng đột ngột khi gặp lỗi.",python
+"File handling trong Python cho phép đọc ghi dữ liệu từ file văn bản hoặc file nhị phân.",python
+"Module và package giúp chia nhỏ chương trình thành nhiều phần dễ quản lý.",python
+"Lập trình hướng đối tượng trong Python sử dụng class object thuộc tính và phương thức.",python
+"Constructor __init__ được gọi khi tạo object mới từ một class.",python
+"Kế thừa cho phép class con tái sử dụng thuộc tính và phương thức của class cha.",python
+"List comprehension giúp tạo danh sách mới ngắn gọn từ một vòng lặp.",python
+"Lambda là hàm ẩn danh ngắn thường dùng với map filter hoặc sorted.",python
+"PEP 8 đưa ra quy ước viết code Python rõ ràng và nhất quán.",python
+"Virtual environment giúp cô lập thư viện của từng dự án Python.",python
+"Pip dùng để cài đặt và quản lý package trong môi trường Python.",python
+"Decorators cho phép mở rộng hành vi của hàm mà không sửa trực tiếp thân hàm.",python
+"Generator tạo dữ liệu từng phần bằng yield giúp tiết kiệm bộ nhớ.",python
+"Unit test trong Python giúp kiểm tra từng hàm hoặc module một cách tự động.",python
+"Linear regression là thuật toán dự đoán giá trị liên tục dựa trên quan hệ tuyến tính giữa biến đầu vào và đầu ra.",machine_learning
+"Overfitting xảy ra khi model học quá kỹ dữ liệu train nhưng dự đoán kém trên dữ liệu mới.",machine_learning
+"Underfitting xảy ra khi model quá đơn giản và không học được cấu trúc quan trọng của dữ liệu.",machine_learning
+"Train test split giúp đánh giá khả năng tổng quát hóa của model trên dữ liệu chưa thấy.",machine_learning
+"K nearest neighbor phân loại điểm mới dựa trên nhãn của những điểm gần nhất trong không gian đặc trưng.",machine_learning
+"Khoảng cách Euclidean thường được dùng trong KNN để đo độ gần giữa hai điểm dữ liệu.",machine_learning
+"K means clustering là thuật toán gom cụm không giám sát dựa trên khoảng cách tới tâm cụm.",machine_learning
+"Naive Bayes classifier dựa trên định lý Bayes và giả định các đặc trưng độc lập có điều kiện.",machine_learning
+"Confusion matrix cho biết số lượng dự đoán đúng sai giữa từng lớp.",machine_learning
+"Accuracy là tỷ lệ mẫu được dự đoán đúng trên tổng số mẫu kiểm tra.",machine_learning
+"Precision đo trong các mẫu model dự đoán là một lớp thì có bao nhiêu mẫu đúng.",machine_learning
+"Recall đo trong các mẫu thật sự thuộc một lớp thì model tìm đúng được bao nhiêu mẫu.",machine_learning
+"F1 score là trung bình điều hòa giữa precision và recall.",machine_learning
+"Feature scaling giúp các đặc trưng có thang đo khác nhau không làm lệch thuật toán dựa trên khoảng cách.",machine_learning
+"Cross validation chia dữ liệu thành nhiều phần để đánh giá model ổn định hơn.",machine_learning
+"Regularization thêm ràng buộc vào hàm mất mát để giảm overfitting.",machine_learning
+"Gradient descent cập nhật trọng số theo hướng giảm dần của hàm lỗi.",machine_learning
+"Supervised learning sử dụng dữ liệu có nhãn để học ánh xạ từ input sang output.",machine_learning
+"Unsupervised learning tìm cấu trúc ẩn trong dữ liệu không có nhãn.",machine_learning
+"Classification là bài toán dự đoán nhãn rời rạc cho một mẫu dữ liệu.",machine_learning
+"Regression là bài toán dự đoán giá trị số liên tục.",machine_learning
+"Bag of Words biểu diễn văn bản bằng số lần xuất hiện của từng từ.",machine_learning
+"Laplace smoothing tránh xác suất bằng không trong Naive Bayes khi gặp từ chưa xuất hiện ở một lớp.",machine_learning
+"Model evaluation cần dùng dữ liệu test tách biệt để tránh đánh giá quá lạc quan.",machine_learning
+"Hyperparameter là tham số cấu hình được chọn trước khi train model như k trong KNN.",machine_learning
+"Cơ sở dữ liệu là hệ thống lưu trữ và quản lý dữ liệu có tổ chức để truy vấn hiệu quả.",database
+"Bảng trong cơ sở dữ liệu quan hệ gồm các hàng và cột biểu diễn entity và thuộc tính.",database
+"Khóa chính xác định duy nhất mỗi bản ghi trong một bảng.",database
+"Khóa ngoại tạo liên kết giữa hai bảng và đảm bảo toàn vẹn tham chiếu.",database
+"SQL là ngôn ngữ dùng để truy vấn và thao tác dữ liệu trong database quan hệ.",database
+"Câu lệnh SELECT dùng để lấy dữ liệu từ một hoặc nhiều bảng.",database
+"WHERE lọc các dòng thỏa điều kiện trong truy vấn SQL.",database
+"JOIN kết hợp dữ liệu từ nhiều bảng dựa trên quan hệ giữa các cột.",database
+"GROUP BY gom nhóm dữ liệu để tính toán tổng hợp như count sum avg.",database
+"ORDER BY sắp xếp kết quả truy vấn theo một hoặc nhiều cột.",database
+"INSERT thêm bản ghi mới vào bảng trong cơ sở dữ liệu.",database
+"UPDATE thay đổi dữ liệu của các bản ghi đã tồn tại.",database
+"DELETE xóa bản ghi khỏi bảng theo điều kiện xác định.",database
+"Normalization giảm dư thừa dữ liệu bằng cách tách bảng theo quan hệ hợp lý.",database
+"Transaction đảm bảo một nhóm thao tác database được thực hiện toàn vẹn hoặc bị hủy toàn bộ.",database
+"ACID gồm atomicity consistency isolation durability là các tính chất quan trọng của transaction.",database
+"Index giúp tăng tốc truy vấn nhưng có thể làm chậm thao tác ghi dữ liệu.",database
+"ERD mô tả các thực thể thuộc tính và quan hệ trong hệ thống dữ liệu.",database
+"One to many là quan hệ một bản ghi ở bảng này liên kết với nhiều bản ghi ở bảng khác.",database
+"Many to many thường cần bảng trung gian để biểu diễn quan hệ giữa hai entity.",database
+"Database schema định nghĩa cấu trúc bảng cột kiểu dữ liệu và ràng buộc.",database
+"NoSQL phù hợp với dữ liệu linh hoạt hoặc cần mở rộng ngang cao.",database
+"Backup database giúp khôi phục dữ liệu khi xảy ra lỗi hoặc mất mát.",database
+"Constraint giới hạn dữ liệu nhập vào để đảm bảo tính hợp lệ.",database
+"View là truy vấn được lưu lại và có thể dùng như một bảng ảo.",database
+"HTML định nghĩa cấu trúc nội dung của trang web bằng các thẻ như div p h1 và form.",web
+"CSS dùng để định dạng giao diện web như màu sắc bố cục khoảng cách và font chữ.",web
+"JavaScript giúp trang web tương tác với người dùng và thay đổi nội dung động.",web
+"HTTP là giao thức truyền dữ liệu giữa client và server trên web.",web
+"Request và response là hai thành phần chính trong quá trình giao tiếp web.",web
+"Frontend là phần giao diện người dùng nhìn thấy và tương tác trực tiếp.",web
+"Backend xử lý logic nghiệp vụ truy cập database và trả dữ liệu cho frontend.",web
+"REST API tổ chức endpoint theo tài nguyên và dùng các phương thức HTTP như GET POST PUT DELETE.",web
+"GET thường dùng để lấy dữ liệu còn POST thường dùng để tạo dữ liệu mới.",web
+"JSON là định dạng dữ liệu phổ biến để trao đổi giữa client và server.",web
+"Form cho phép người dùng nhập dữ liệu và gửi lên server để xử lý.",web
+"Responsive design giúp giao diện hiển thị tốt trên nhiều kích thước màn hình.",web
+"Bootstrap là thư viện CSS hỗ trợ xây dựng giao diện nhanh với grid và component sẵn có.",web
+"Streamlit giúp tạo ứng dụng web dữ liệu bằng Python với ít code giao diện.",web
+"Session state trong Streamlit lưu trạng thái giữa các lần rerun của ứng dụng.",web
+"Route xác định URL tương ứng với một chức năng hoặc trang trong web app.",web
+"Authentication xác minh danh tính người dùng trước khi cho truy cập hệ thống.",web
+"Authorization kiểm tra người dùng có quyền thực hiện hành động hay không.",web
+"Cookie lưu thông tin nhỏ ở trình duyệt và thường dùng để duy trì phiên đăng nhập.",web
+"CORS kiểm soát việc website ở domain này gọi tài nguyên từ domain khác.",web
+"Template engine giúp render HTML động từ dữ liệu phía server.",web
+"Web server nhận request từ client và trả về response phù hợp.",web
+"API documentation mô tả endpoint tham số request và response để lập trình viên sử dụng.",web
+"Validation phía server kiểm tra dữ liệu đầu vào để tránh lỗi và lỗ hổng bảo mật.",web
+"Deployment đưa ứng dụng web lên môi trường chạy thật để người dùng truy cập.",web
+"Hàm số mô tả quan hệ giữa đầu vào và đầu ra trong toán học.",math
+"Đạo hàm biểu diễn tốc độ thay đổi tức thời của hàm số theo biến.",math
+"Tích phân có thể dùng để tính diện tích dưới đường cong của hàm số.",math
+"Ma trận là mảng số hai chiều được dùng nhiều trong đại số tuyến tính và machine learning.",math
+"Vector biểu diễn đại lượng có hướng hoặc danh sách đặc trưng của một mẫu dữ liệu.",math
+"Xác suất đo khả năng xảy ra của một biến cố trong không gian mẫu.",math
+"Kỳ vọng là giá trị trung bình lý thuyết của một biến ngẫu nhiên.",math
+"Phương sai đo mức độ phân tán của dữ liệu quanh giá trị trung bình.",math
+"Độ lệch chuẩn là căn bậc hai của phương sai và có cùng đơn vị với dữ liệu.",math
+"Phân phối chuẩn có dạng chuông và xuất hiện nhiều trong thống kê.",math
+"Hệ phương trình tuyến tính gồm nhiều phương trình bậc nhất với nhiều ẩn.",math
+"Định thức giúp xác định một ma trận vuông có khả nghịch hay không.",math
+"Ma trận nghịch đảo được dùng để giải hệ phương trình tuyến tính trong một số trường hợp.",math
+"Tích vô hướng đo mức độ cùng hướng giữa hai vector.",math
+"Khoảng cách Euclidean tính độ dài đường thẳng giữa hai điểm trong không gian.",math
+"Trung bình cộng là tổng các giá trị chia cho số lượng quan sát.",math
+"Median là giá trị nằm giữa khi sắp xếp dữ liệu theo thứ tự.",math
+"Mode là giá trị xuất hiện nhiều nhất trong tập dữ liệu.",math
+"Tổ hợp đếm số cách chọn phần tử mà không xét thứ tự.",math
+"Chỉnh hợp đếm số cách chọn phần tử có xét thứ tự.",math
+"Logarithm là phép toán ngược của lũy thừa và thường dùng để biến tích thành tổng.",math
+"Hàm mất mát đo mức độ sai lệch giữa dự đoán của model và giá trị thực.",math
+"Gradient là vector các đạo hàm riêng chỉ hướng tăng nhanh nhất của hàm.",math
+"Không gian vector gồm các vector có thể cộng với nhau và nhân với số vô hướng.",math
+"Tương quan đo mức độ liên hệ tuyến tính giữa hai biến số.",math

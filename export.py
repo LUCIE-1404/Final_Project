@@ -20,6 +20,15 @@ def to_markdown(data: dict, filename: str = "") -> str:
         "advanced": "Nâng cao",
     }
     difficulty = difficulty_map.get(meta.get("difficulty_level", ""), "N/A")
+    topic_prediction = data.get("topic_prediction", {})
+    predicted_topic = topic_prediction.get("label", "unknown")
+    prediction_algorithm = topic_prediction.get("algorithm", "unknown")
+    confidence = topic_prediction.get("confidence", 0.0)
+    confidence_text = (
+        f"{confidence * 100:.1f}%"
+        if topic_prediction.get("model_available")
+        else "N/A"
+    )
     generated_at = datetime.now().strftime("%d/%m/%Y %H:%M")
 
     lines = []
@@ -29,6 +38,7 @@ def to_markdown(data: dict, filename: str = "") -> str:
         f"# Kết quả phân tích bài giảng",
         f"",
         f"> **File:** {filename}  ",
+        f"> **ML topic:** {predicted_topic} ({confidence_text}, {prediction_algorithm})  ",
         f"> **Chủ đề:** {topic}  ",
         f"> **Thời lượng ước tính:** {duration} phút  ",
         f"> **Độ khó:** {difficulty}  ",

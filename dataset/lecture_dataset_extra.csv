@@ -1,0 +1,126 @@
+text,label
+"Python variables store values such as numbers strings lists and dictionaries.",python
+"A Python function receives input parameters and returns a computed result.",python
+"Python list append remove and index are common operations on ordered data.",python
+"Dictionary keys and values are used to represent structured information in Python.",python
+"Python class object attribute and method are core ideas of object oriented programming.",python
+"Inheritance lets a Python child class reuse behavior from a parent class.",python
+"Exception handling with try except keeps a Python program from crashing on invalid input.",python
+"Reading and writing files in Python is done with open read write and close.",python
+"A Python module separates code into reusable files that can be imported.",python
+"A package groups multiple Python modules into one project structure.",python
+"List comprehension creates a new list from an existing iterable in compact syntax.",python
+"Lambda functions are short anonymous functions often used with sorting or filtering.",python
+"Generators use yield to produce values one at a time and save memory.",python
+"Virtual environments isolate Python dependencies for each project.",python
+"Pip installs Python packages listed in a requirements file.",python
+"Unit testing checks whether each Python function behaves as expected.",python
+"A constructor initializes object state when a Python class creates a new instance.",python
+"Python loops can iterate over ranges lists tuples sets and dictionaries.",python
+"The if elif else statement controls program branching in Python.",python
+"Python data types include integer float string boolean list tuple set and dictionary.",python
+"Decorators wrap a Python function to extend its behavior without changing its body.",python
+"Python standard library provides modules for json csv math os and datetime.",python
+"Mutable Python objects such as lists can be changed after creation.",python
+"Immutable Python objects such as tuples and strings cannot be changed in place.",python
+"Clean Python code uses descriptive names small functions and readable structure.",python
+"Machine learning uses data to train a model that can make predictions on new examples.",machine_learning
+"Linear regression learns a line that predicts a continuous target value.",machine_learning
+"Overfitting happens when a model memorizes training data and performs poorly on test data.",machine_learning
+"Underfitting happens when a model is too simple to capture important patterns.",machine_learning
+"Train test split separates data for learning and data for evaluation.",machine_learning
+"K nearest neighbor predicts a label from the closest training samples.",machine_learning
+"KNN depends heavily on the value of k and the distance metric.",machine_learning
+"K means clustering groups unlabeled data around cluster centroids.",machine_learning
+"Naive Bayes uses Bayes theorem and word probabilities for text classification.",machine_learning
+"Laplace smoothing prevents zero probability when a word does not appear in a class.",machine_learning
+"Accuracy measures the ratio of correct predictions to all test samples.",machine_learning
+"Precision recall and f1 score evaluate classification performance in more detail.",machine_learning
+"A confusion matrix shows which labels are predicted correctly or confused.",machine_learning
+"Feature extraction converts raw text images or numbers into model input.",machine_learning
+"Bag of words represents text by counting how often each word appears.",machine_learning
+"N gram features capture word phrases such as linear regression or train test.",machine_learning
+"Model evaluation should use unseen data to avoid optimistic results.",machine_learning
+"Cross validation evaluates a model across several train test splits.",machine_learning
+"Regularization reduces overfitting by penalizing overly complex models.",machine_learning
+"Gradient descent updates parameters to reduce the loss function.",machine_learning
+"Supervised learning trains from labeled examples with known answers.",machine_learning
+"Unsupervised learning discovers groups or patterns without labels.",machine_learning
+"Classification predicts categories while regression predicts continuous values.",machine_learning
+"Hyperparameters such as k alpha and learning rate are chosen before training.",machine_learning
+"Feature scaling helps distance based models compare variables fairly.",machine_learning
+"A database stores organized data so applications can query and update information.",database
+"A relational database stores data in tables with rows columns and constraints.",database
+"A primary key uniquely identifies each record in a database table.",database
+"A foreign key links one database table to another related table.",database
+"SQL select queries retrieve records from one or more database tables.",database
+"The where clause filters database rows by a condition.",database
+"SQL join combines related rows from multiple tables.",database
+"Group by aggregates database records by category or attribute.",database
+"Order by sorts query results ascending or descending.",database
+"Insert adds a new row into a database table.",database
+"Update modifies existing records in a database table.",database
+"Delete removes records from a table when a condition matches.",database
+"Normalization reduces duplicate data by splitting information into related tables.",database
+"A transaction groups database operations that must succeed or fail together.",database
+"ACID describes atomicity consistency isolation and durability in database transactions.",database
+"An index speeds up database reads but can add cost to writes.",database
+"An ERD shows entities attributes and relationships in a database design.",database
+"One to many relationships connect one parent record to many child records.",database
+"Many to many relationships usually require a junction table.",database
+"A database schema defines tables columns data types and constraints.",database
+"NoSQL databases support flexible document key value graph or column data models.",database
+"Database backup protects data from failure deletion or corruption.",database
+"Constraints such as not null unique and check protect data quality.",database
+"A database view stores a reusable query that can be read like a table.",database
+"Query optimization improves database performance by choosing efficient execution plans.",database
+"HTML creates the structure of a web page with headings paragraphs links and forms.",web
+"CSS controls colors spacing typography layout and responsive design on a web page.",web
+"JavaScript adds interactive behavior to buttons forms menus and dynamic content.",web
+"HTTP request and response messages connect a browser to a web server.",web
+"Frontend development builds the user interface that users see in the browser.",web
+"Backend development handles business logic database access and API responses.",web
+"A REST API exposes resources through endpoints and HTTP methods.",web
+"GET requests read data while POST requests usually create new data.",web
+"JSON is a common data format exchanged between frontend and backend.",web
+"A web form collects user input and sends it to a server.",web
+"Responsive design adapts a web interface to mobile tablet and desktop screens.",web
+"Streamlit creates data apps and web demos directly from Python scripts.",web
+"Session state stores values across reruns in a Streamlit application.",web
+"Authentication verifies the identity of a user in a web system.",web
+"Authorization decides which actions an authenticated user can perform.",web
+"Cookies store small pieces of browser data such as a session identifier.",web
+"CORS controls whether one domain can request resources from another domain.",web
+"A route maps a URL path to a function or page in a web application.",web
+"A web server receives client requests and returns HTML JSON files or errors.",web
+"Deployment publishes a web application so users can access it online.",web
+"Validation checks user input before saving or processing it on the server.",web
+"API documentation explains endpoints parameters request bodies and response formats.",web
+"Template rendering generates dynamic HTML from server side data.",web
+"Static assets include CSS JavaScript images fonts and media files.",web
+"Browser developer tools help inspect layout network requests and console errors.",web
+"Calculus studies functions limits derivatives and integrals.",math
+"A derivative measures the instantaneous rate of change of a function.",math
+"An integral can represent area under a curve or accumulated quantity.",math
+"A limit describes the value a function approaches near a point.",math
+"A matrix is a rectangular array of numbers used in linear algebra.",math
+"A vector represents magnitude direction or a list of numeric features.",math
+"Probability measures how likely an event is to occur.",math
+"Expected value is the long run average of a random variable.",math
+"Variance measures how far data values spread from the mean.",math
+"Standard deviation is the square root of variance.",math
+"A normal distribution has a bell shaped curve around the mean.",math
+"A linear equation has variables with power one and forms a straight line.",math
+"A system of linear equations contains multiple equations solved together.",math
+"The determinant helps decide whether a square matrix has an inverse.",math
+"An inverse matrix can solve certain systems of linear equations.",math
+"Dot product measures similarity or projection between two vectors.",math
+"Euclidean distance measures straight line distance between two points.",math
+"Mean median and mode are common measures of central tendency.",math
+"Combination counts selections without order while permutation counts ordered selections.",math
+"A logarithm is the inverse operation of exponentiation.",math
+"The gradient contains partial derivatives and points toward steepest increase.",math
+"A loss function measures the difference between prediction and target.",math
+"Correlation measures the strength and direction of a linear relationship.",math
+"Basic calculus uses derivatives integrals functions graphs and equations.",math
+"Algebra and statistics provide mathematical foundations for machine learning.",math

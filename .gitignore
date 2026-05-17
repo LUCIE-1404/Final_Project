@@ -5,3 +5,5 @@ venv/
 *.pyo
 *.json
 !.env.example
+!models/
+!models/*.json

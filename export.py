@@ -21,8 +21,19 @@ def to_markdown(data: dict, filename: str = "") -> str:
     }
     difficulty = difficulty_map.get(meta.get("difficulty_level", ""), "N/A")
     topic_prediction = data.get("topic_prediction", {})
+    difficulty_prediction = data.get("difficulty_prediction", {})
     predicted_topic = topic_prediction.get("label", "unknown")
     prediction_algorithm = topic_prediction.get("algorithm", "unknown")
+    predicted_difficulty = difficulty_map.get(
+        difficulty_prediction.get("label", ""),
+        difficulty,
+    )
+    difficulty_confidence = difficulty_prediction.get("confidence", 0.0)
+    difficulty_confidence_text = (
+        f"{difficulty_confidence * 100:.1f}%"
+        if difficulty_prediction.get("model_available")
+        else "N/A"
+    )
     confidence = topic_prediction.get("confidence", 0.0)
     confidence_text = (
         f"{confidence * 100:.1f}%"
@@ -41,7 +52,7 @@ def to_markdown(data: dict, filename: str = "") -> str:
         f"> **ML topic:** {predicted_topic} ({confidence_text}, {prediction_algorithm})  ",
         f"> **Chủ đề:** {topic}  ",
         f"> **Thời lượng ước tính:** {duration} phút  ",
-        f"> **Độ khó:** {difficulty}  ",
+        f"> **ML difficulty:** {predicted_difficulty} ({difficulty_confidence_text})  ",
         f"> **Tạo lúc:** {generated_at}",
         f"",
         "---",

@@ -59,11 +59,70 @@ def generate_content_with_fallback(models, contents, config):
 
 
 def parse_json(text):
+    if not text:
+        logger.warning("Gemini returned an empty JSON response.")
+        return {}
+    if not isinstance(text, str):
+        logger.warning("Gemini returned a non-text JSON response: %s", type(text).__name__)
+        return {}
+
     try:
         return json.loads(text.replace("```json", "").replace("```", "").strip())
     except json.JSONDecodeError as exc:
         logger.warning("Failed to parse Gemini JSON response: %s", exc)
         return {}
+
+
+def normalize_transcript_response(data):
+    if isinstance(data, dict):
+        transcript = data.get("transcript") or data.get("text") or data.get("content")
+        if transcript:
+            return {
+                "transcript": str(transcript).strip(),
+                "unclear_segments": data.get("unclear_segments", []),
+                "transcript_segments": data.get("segments", data.get("transcript_segments", [])),
+            }
+        return {}
+
+    if isinstance(data, list):
+        transcript_parts = []
+        segments = []
+        unclear_segments = []
+
+        for index, item in enumerate(data):
+            if isinstance(item, str):
+                text = item.strip()
+                segment = {"index": index, "text": text}
+            elif isinstance(item, dict):
+                text = (
+                    item.get("transcript")
+                    or item.get("text")
+                    or item.get("content")
+                    or item.get("sentence")
+                    or ""
+                )
+                text = str(text).strip()
+                segment = dict(item)
+                segment["text"] = text
+                if item.get("unclear") or item.get("unclear_segment"):
+                    unclear_segments.append(segment)
+            else:
+                continue
+
+            if text:
+                transcript_parts.append(text)
+                segments.append(segment)
+
+        transcript = "\n".join(transcript_parts).strip()
+        if transcript:
+            return {
+                "transcript": transcript,
+                "unclear_segments": unclear_segments,
+                "transcript_segments": segments,
+            }
+
+    logger.warning("Unsupported transcript response shape: %s", type(data).__name__)
+    return {}
 
 
 def transcribe_audio(path):
@@ -79,7 +138,13 @@ def transcribe_audio(path):
                 temperature=0.0,
             ),
         )
-        return parse_json(resp.text)
+        transcript_data = normalize_transcript_response(parse_json(resp.text))
+        if not transcript_data.get("transcript"):
+            raise RuntimeError(
+                "Gemini khong tra ve transcript cho file audio nay. "
+                "Hay thu file ngan hon, file audio ro hon, hoac doi model transcribe."
+            )
+        return transcript_data
     finally:
         if uploaded:
             try:

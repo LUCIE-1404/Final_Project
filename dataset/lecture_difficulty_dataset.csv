@@ -1,0 +1,156 @@
+text,difficulty
+"Variables, simple data types, print statements, and basic input output in Python.",beginner
+"A Python list stores ordered values and can be changed with append remove and indexing.",beginner
+"If else statements choose different code paths from simple true or false conditions.",beginner
+"For loops repeat an action over a list, string, or range of numbers.",beginner
+"A function groups reusable Python code with parameters and a return value.",beginner
+"HTML headings paragraphs links and images create the basic structure of a web page.",beginner
+"CSS colors fonts margins and padding change how a web page looks.",beginner
+"SQL select from where retrieves rows from a single database table.",beginner
+"A primary key uniquely identifies a row in a simple database table.",beginner
+"Mean median and mode summarize the center of a small dataset.",beginner
+"A variable stores a value that can be used later in a program.",beginner
+"Basic arithmetic operators add subtract multiply divide and calculate remainders.",beginner
+"A web form collects user input and sends it to a server.",beginner
+"A table contains rows and columns for storing structured data.",beginner
+"A probability value describes how likely a simple event is to happen.",beginner
+"Lists tuples dictionaries and sets store collections of values in Python.",beginner
+"A browser sends an HTTP request and receives a response from a web server.",beginner
+"A matrix is a rectangular arrangement of numbers with rows and columns.",beginner
+"Linear equations with one variable can be solved by isolating the unknown.",beginner
+"A basic chart shows values so patterns are easier to see.",beginner
+"Nested loops, file handling, exceptions, and modules require combining several Python concepts.",intermediate
+"Object oriented programming uses classes objects methods inheritance and encapsulation.",intermediate
+"List comprehensions and lambda functions make data transformations shorter but less obvious.",intermediate
+"Database joins combine rows from multiple related tables using primary and foreign keys.",intermediate
+"Group by and aggregate functions summarize database records by category.",intermediate
+"Normalization reduces duplicated database data by splitting entities into related tables.",intermediate
+"REST APIs use endpoints methods JSON request bodies and response status codes.",intermediate
+"Authentication and authorization control user identity and permissions in a web app.",intermediate
+"Responsive design adapts layouts across mobile tablet and desktop screens.",intermediate
+"Linear regression fits a line to predict a continuous target variable.",intermediate
+"K nearest neighbor classifies data points using distance to labeled examples.",intermediate
+"K means clustering groups unlabeled samples around cluster centroids.",intermediate
+"Naive Bayes estimates class probabilities from word frequencies and class priors.",intermediate
+"Train test split evaluates whether a model can generalize to unseen examples.",intermediate
+"Accuracy precision recall and f1 score describe classification performance.",intermediate
+"Confusion matrix analysis shows which classes are commonly mistaken.",intermediate
+"Derivatives measure how quickly a function changes at a point.",intermediate
+"Integrals calculate accumulated quantity or area under a curve.",intermediate
+"Variance and standard deviation measure how spread out data values are.",intermediate
+"Feature scaling helps distance based algorithms compare numeric variables fairly.",intermediate
+"Regularization, cross validation, and hyperparameter tuning reduce overfitting risk.",advanced
+"Gradient descent optimizes model parameters by following the negative gradient of a loss function.",advanced
+"Multinomial Naive Bayes uses log probabilities and Laplace smoothing to avoid zero likelihoods.",advanced
+"Cosine similarity compares sparse text vectors by their direction rather than their length.",advanced
+"Model serialization stores trained parameters so prediction can run without retraining.",advanced
+"A many to many relationship needs a junction table and careful constraint design.",advanced
+"Transaction isolation levels affect concurrency, locking, and data consistency.",advanced
+"Query optimization uses indexes execution plans and selectivity to reduce database cost.",advanced
+"Backend file upload pipelines must validate file type size temporary storage and cleanup.",advanced
+"Stateful Streamlit applications rerun scripts while preserving selected session variables.",advanced
+"A classifier can overfit when feature space grows quickly with n gram text features.",advanced
+"Cross validation across several folds gives a more stable estimate than one train test split.",advanced
+"Bias variance tradeoff explains how model complexity affects training and test errors.",advanced
+"Partial derivatives and gradients generalize derivative ideas to multivariable functions.",advanced
+"Matrix inverse, determinant, eigenvectors, and vector spaces support linear algebra models.",advanced
+"Bayes theorem computes posterior probability from prior probability and likelihood.",advanced
+"Advanced probability combines conditional probability independence expectation and variance.",advanced
+"Feature engineering for text classification balances vocabulary size against noisy sparse terms.",advanced
+"Production ML systems need monitoring, fallback behavior, and clear separation between training and inference.",advanced
+"Evaluation leakage happens when information from test data influences training decisions.",advanced
+"Beginner lessons introduce one concept at a time with direct examples and simple vocabulary.",beginner
+"A simple Python lesson explains what a variable is and shows assigning a number to a name.",beginner
+"A first programming lesson usually covers print input strings numbers and comments.",beginner
+"A beginner database lesson explains table row column and record with a small example.",beginner
+"A simple web lesson introduces HTML tags such as heading paragraph list and link.",beginner
+"A beginner CSS lesson changes text color background color and font size.",beginner
+"A first math lesson explains addition subtraction multiplication division and remainder.",beginner
+"A simple statistics lesson calculates average value from a short list of numbers.",beginner
+"A beginner probability lesson uses coin toss dice roll and simple event examples.",beginner
+"A basic loop lesson counts from one to ten and prints each value.",beginner
+"A beginner condition lesson compares two numbers and chooses the larger one.",beginner
+"A simple function lesson defines one function and calls it with one argument.",beginner
+"A beginner file lesson reads a short text file line by line.",beginner
+"A basic SQL lesson selects all columns from one table without joins.",beginner
+"A beginner chart lesson displays a bar chart from a few category values.",beginner
+"A simple matrix lesson identifies rows columns and individual elements.",beginner
+"A beginner HTTP lesson explains browser client server request and response.",beginner
+"A basic data lesson separates input process and output in a small program.",beginner
+"A simple quiz lesson asks one direct question and gives one correct answer.",beginner
+"A beginner transcript lesson only identifies main terms without advanced analysis.",beginner
+"Intermediate lessons combine multiple concepts and require comparing related ideas.",intermediate
+"An intermediate Python lesson combines functions lists dictionaries and loops in one program.",intermediate
+"An intermediate OOP lesson creates multiple classes and explains object relationships.",intermediate
+"An intermediate exception lesson catches different error types and handles invalid input.",intermediate
+"An intermediate database lesson joins customer order and product tables.",intermediate
+"An intermediate SQL lesson uses group by having aggregate functions and order by.",intermediate
+"An intermediate web lesson connects a form to a backend API and stores submitted data.",intermediate
+"An intermediate REST lesson explains endpoints methods status codes and JSON payloads.",intermediate
+"An intermediate ML lesson compares classification and regression with train test split.",intermediate
+"An intermediate KNN lesson chooses k and compares Euclidean and cosine distance.",intermediate
+"An intermediate Naive Bayes lesson explains prior likelihood posterior and smoothing.",intermediate
+"An intermediate clustering lesson explains centroid update and convergence in k means.",intermediate
+"An intermediate evaluation lesson reads accuracy precision recall f1 and confusion matrix.",intermediate
+"An intermediate calculus lesson computes derivatives and interprets slope.",intermediate
+"An intermediate integral lesson solves area under a curve with basic formulas.",intermediate
+"An intermediate statistics lesson compares variance standard deviation and distribution.",intermediate
+"An intermediate linear algebra lesson multiplies matrices and calculates dot products.",intermediate
+"An intermediate feature lesson converts text to bag of words and n gram vectors.",intermediate
+"An intermediate deployment lesson runs a local app and configures environment variables.",intermediate
+"An intermediate project lesson combines upload processing prediction and export.",intermediate
+"Advanced lessons involve abstraction, optimization, tradeoffs, and failure modes.",advanced
+"An advanced Python lesson designs decorators generators context managers and custom iterators.",advanced
+"An advanced architecture lesson separates UI service layer model inference and persistence.",advanced
+"An advanced ML lesson discusses bias variance tradeoff and model generalization limits.",advanced
+"An advanced validation lesson prevents data leakage across preprocessing training and testing.",advanced
+"An advanced text classification lesson analyzes sparse high dimensional vectors and vocabulary growth.",advanced
+"An advanced Bayes lesson derives log likelihood scores and compares numerical stability.",advanced
+"An advanced KNN lesson studies curse of dimensionality and weighted neighbor voting.",advanced
+"An advanced optimization lesson derives gradients and updates parameters using learning rate schedules.",advanced
+"An advanced database lesson analyzes indexes query plans transaction isolation and locking.",advanced
+"An advanced API lesson designs authentication authorization rate limiting and error contracts.",advanced
+"An advanced deployment lesson handles monitoring rollback secrets and production configuration.",advanced
+"An advanced probability lesson proves conditional independence and expectation identities.",advanced
+"An advanced linear algebra lesson connects eigenvalues eigenvectors vector spaces and transformations.",advanced
+"An advanced calculus lesson works with partial derivatives gradients and multivariable functions.",advanced
+"An advanced evaluation lesson compares cross validation macro f1 micro f1 and class imbalance.",advanced
+"An advanced regularization lesson contrasts l1 l2 penalty and overfitting control.",advanced
+"An advanced clustering lesson evaluates clusters using inertia silhouette score and initialization.",advanced
+"An advanced system lesson designs fallback behavior when external AI services fail.",advanced
+"An advanced report lesson explains assumptions limitations reproducibility and experimental risk.",advanced
+"A beginner loop lesson repeats a print statement for each item in a short list.",beginner
+"A beginner for loop lesson uses range to count numbers and display simple output.",beginner
+"A beginner control flow lesson uses if else with one condition and one result.",beginner
+"A beginner database relationship lesson only explains that one table can connect to another.",beginner
+"A beginner classification lesson simply says a model chooses one category from several categories.",beginner
+"A beginner web layout lesson changes width height color and spacing without responsive rules.",beginner
+"A beginner statistics lesson counts correct and incorrect answers without advanced metrics.",beginner
+"A beginner Python lesson explains session variables as values that remember information.",beginner
+"A beginner table lesson describes records columns and simple links between tables.",beginner
+"A beginner machine learning lesson introduces training data and test data with a small example.",beginner
+"An intermediate train test split lesson explains why test data must be separate from training data.",intermediate
+"An intermediate model evaluation lesson calculates accuracy from correct and incorrect predictions.",intermediate
+"An intermediate confusion matrix lesson compares actual labels with predicted labels for each class.",intermediate
+"An intermediate metrics lesson explains precision recall and f1 score without deriving formulas.",intermediate
+"An intermediate Naive Bayes lesson counts word frequency for each class and predicts the highest score.",intermediate
+"An intermediate Bayes lesson applies prior likelihood and posterior to a text classification example.",intermediate
+"An intermediate responsive design lesson uses breakpoints and flexible grids for different screens.",intermediate
+"An intermediate frontend lesson adjusts layout for desktop and mobile with media queries.",intermediate
+"An intermediate Streamlit lesson uses session state to preserve uploaded file results after rerun.",intermediate
+"An intermediate API lesson sends JSON data from frontend to backend and handles simple errors.",intermediate
+"An intermediate database design lesson creates foreign keys and explains one to many relationships.",intermediate
+"An intermediate many to many lesson introduces a junction table with a student course example.",intermediate
+"An intermediate ML lesson compares overfitting and underfitting using train and test accuracy.",intermediate
+"An intermediate feature lesson uses bag of words to convert a transcript into numeric counts.",intermediate
+"An intermediate quiz lesson validates selected answers and displays a short explanation.",intermediate
+"An advanced many to many lesson enforces junction table constraints, composite keys, and cascading rules.",advanced
+"An advanced Streamlit lesson explains rerun behavior, widget identity, cache invalidation, and session state consistency.",advanced
+"An advanced model evaluation lesson analyzes macro average, weighted average, imbalance, and threshold effects.",advanced
+"An advanced Naive Bayes lesson derives log posterior scores and explains independence assumptions.",advanced
+"An advanced responsive design lesson resolves layout shift, overflow, accessibility, and cross browser rendering issues.",advanced
+"An advanced train test lesson discusses leakage, stratification, variance, and reproducibility across random seeds.",advanced
+"An advanced database relationship lesson compares normalization tradeoffs, indexes, and transaction consistency.",advanced
+"An advanced feature engineering lesson reduces sparse noise using vocabulary filtering and n gram selection.",advanced
+"An advanced API lesson handles retry policy, timeout strategy, idempotency, and observability.",advanced
+"An advanced ML system lesson separates offline training, online inference, monitoring, and rollback.",advanced

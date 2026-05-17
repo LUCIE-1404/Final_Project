@@ -1,151 +1,124 @@
+from html import escape
+
 import streamlit as st
 
 
+def render_html(markup):
+    st.markdown(markup.lstrip(), unsafe_allow_html=True)
+
+
 def render_sidebar(results=None):
-    """Render sidebar with warm parchment light aesthetic."""
     has_results = bool(results)
 
     if has_results:
-        status_bg     = "#ecfdf5"
-        status_border = "#a7f3d0"
-        status_color  = "#047857"
-        status_icon   = "✓"
-        status_text   = "Phân tích hoàn tất"
-        quiz_count    = len(results.get("quiz", []))
+        status_bg = "#f0fdf4"
+        status_border = "#bbf7d0"
+        status_color = "#166534"
+        status_icon = "OK"
+        status_text = "Phan tich hoan tat"
+        quiz_count = len(results.get("quiz", []))
         summary_count = len(results.get("summary", []))
-        topic         = results.get("metadata", {}).get("topic") or "—"
-        stats_html = f"""
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:1rem">
-            <div style="background:#faf8f5;border:1px solid #ede8e0;border-radius:8px;padding:0.75rem">
-                <div style="font-size:0.65rem;letter-spacing:0.09em;text-transform:uppercase;color:#a8998c;margin-bottom:0.25rem;font-weight:700">Ý chính</div>
-                <div style="font-family:'DM Mono',monospace;font-size:1.2rem;color:#1c1917;font-weight:500">{summary_count}</div>
-            </div>
-            <div style="background:#faf8f5;border:1px solid #ede8e0;border-radius:8px;padding:0.75rem">
-                <div style="font-size:0.65rem;letter-spacing:0.09em;text-transform:uppercase;color:#a8998c;margin-bottom:0.25rem;font-weight:700">Câu hỏi</div>
-                <div style="font-family:'DM Mono',monospace;font-size:1.2rem;color:#1c1917;font-weight:500">{quiz_count}</div>
-            </div>
-        </div>
-        <div style="margin-top:0.5rem;background:#faf8f5;border:1px solid #ede8e0;border-radius:8px;padding:0.75rem">
-            <div style="font-size:0.65rem;letter-spacing:0.09em;text-transform:uppercase;color:#a8998c;margin-bottom:0.25rem;font-weight:700">Chủ đề</div>
-            <div style="font-size:0.85rem;color:#3d3530;line-height:1.4">{topic}</div>
-        </div>
-        """
+        topic = escape(str(results.get("metadata", {}).get("topic") or "-"))
+        stats_html = f"""<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1.1rem">
+<div style="background:#f5f1ea;border:1px solid #e3ddd4;border-radius:8px;padding:.8rem .9rem">
+<div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#a89e95;margin-bottom:.3rem">Y chinh</div>
+<div style="font-family:'SF Mono','Menlo',monospace;font-size:1.35rem;font-weight:600;color:#1a1714;line-height:1">{summary_count}</div>
+</div>
+<div style="background:#f5f1ea;border:1px solid #e3ddd4;border-radius:8px;padding:.8rem .9rem">
+<div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#a89e95;margin-bottom:.3rem">Cau hoi</div>
+<div style="font-family:'SF Mono','Menlo',monospace;font-size:1.35rem;font-weight:600;color:#1a1714;line-height:1">{quiz_count}</div>
+</div>
+</div>
+<div style="margin-top:.5rem;background:#f5f1ea;border:1px solid #e3ddd4;border-radius:8px;padding:.8rem .9rem">
+<div style="font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#a89e95;margin-bottom:.3rem">Chu de nhan dang</div>
+<div style="font-size:.87rem;color:#3a342e;line-height:1.45">{topic}</div>
+</div>"""
     else:
-        status_bg     = "#fef3c7"
+        status_bg = "#fef3c7"
         status_border = "#fcd34d"
-        status_color  = "#92400e"
-        status_icon   = "○"
-        status_text   = "Chờ file audio"
-        stats_html    = ""
+        status_color = "#92400e"
+        status_icon = "..."
+        status_text = "Cho file audio"
+        stats_html = ""
 
     with st.sidebar:
-        st.markdown(
-            f"""
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-                [data-testid="stSidebar"] {{
-                    background: #ffffff !important;
-                    border-right: 1px solid #e2d9cc !important;
-                }}
-                [data-testid="stSidebar"] .stMarkdown p,
-                [data-testid="stSidebar"] .stMarkdown li {{
-                    color: #7c6e62 !important;
-                    font-size: 0.88rem !important;
-                    line-height: 1.65 !important;
-                    font-family: 'DM Sans', sans-serif !important;
-                }}
-                [data-testid="stSidebar"] hr {{
-                    border: none !important;
-                    border-top: 1px solid #ede8e0 !important;
-                    margin: 1rem 0 !important;
-                }}
-                [data-testid="stSidebar"] .stCaption,
-                [data-testid="stSidebar"] [data-testid="stCaptionContainer"] {{
-                    color: #a8998c !important;
-                    font-size: 0.78rem !important;
-                    line-height: 1.6 !important;
-                }}
-            </style>
-
-            <!-- Branding -->
-            <div style="padding:0.5rem 0 1.4rem">
-                <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#b45309;margin-bottom:0.5rem;font-family:'DM Sans',sans-serif">
-                    ◆ &nbsp;Lecture Lab
-                </div>
-                <div style="font-family:'Lora',Georgia,serif;font-size:1.22rem;font-weight:700;color:#1c1917;line-height:1.22;margin-bottom:0.4rem">
-                    AI Analysis<br>Workspace
-                </div>
-                <div style="font-size:0.8rem;color:#a8998c;font-family:'DM Sans',sans-serif">
-                    Transcript · Summary · Quiz · ML
-                </div>
-            </div>
-
-            <!-- Status -->
-            <div style="background:{status_bg};border:1px solid {status_border};border-radius:9px;padding:0.75rem 1rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem">
-                <span style="color:{status_color};font-size:0.95rem">{status_icon}</span>
-                <span style="color:{status_color};font-size:0.84rem;font-weight:600;font-family:'DM Sans',sans-serif">{status_text}</span>
-            </div>
-
-            {stats_html}
-            """,
-            unsafe_allow_html=True,
+        render_html(
+            f"""<style>
+[data-testid="stSidebar"] {{
+background: #ffffff !important;
+border-right: 1px solid #e3ddd4 !important;
+}}
+[data-testid="stSidebar"] .stMarkdown p,
+[data-testid="stSidebar"] .stMarkdown li {{
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+font-size: .88rem !important;
+color: #7a6f65 !important;
+line-height: 1.65 !important;
+}}
+[data-testid="stSidebar"] hr {{
+border: none !important;
+border-top: 1px solid #ece7de !important;
+margin: 1rem 0 !important;
+}}
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+[data-testid="stSidebar"] .stCaption {{
+font-size: .77rem !important;
+color: #a89e95 !important;
+line-height: 1.6 !important;
+}}
+</style>
+<div style="padding:.4rem 0 1.5rem">
+<div style="display:inline-flex;align-items:center;gap:.4rem;background:#fef0d4;border:1px solid rgba(194,106,16,.2);border-radius:999px;padding:.24rem .65rem;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#c26a10;margin-bottom:.75rem">
+<span style="width:5px;height:5px;border-radius:50%;background:#f5a623;display:inline-block"></span>
+Lecture Lab
+</div>
+<div style="font-family:Georgia,'Times New Roman',serif;font-size:1.25rem;font-weight:700;color:#1a1714;line-height:1.2;margin-bottom:.4rem">
+AI Analysis<br>Workspace
+</div>
+<div style="font-size:.79rem;color:#a89e95">
+Transcript - Summary - Quiz - ML
+</div>
+</div>
+<div style="background:{status_bg};border:1px solid {status_border};border-radius:9px;padding:.7rem 1rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:.55rem">
+<span style="color:{status_color};font-size:.9rem;font-weight:700">{status_icon}</span>
+<span style="color:{status_color};font-size:.84rem;font-weight:600">{status_text}</span>
+</div>
+{stats_html}"""
         )
 
-        # Pipeline
-        st.markdown(
-            """
-            <div style="margin-top:1.4rem;margin-bottom:0.7rem">
-                <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#b45309;font-family:'DM Sans',sans-serif">
-                    Pipeline
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        render_html(
+            """<div style="margin-top:1.4rem;margin-bottom:.65rem;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c26a10">
+Pipeline xu ly
+</div>"""
         )
 
         steps = [
-            ("①", "Upload audio",        "MP3, WAV, M4A"),
-            ("②", "Transcribe",          "Gemini speech-to-text"),
-            ("③", "Cleanup",             "Chuẩn hoá & sửa lỗi"),
-            ("④", "Summarize",           "Trích xuất ý chính"),
-            ("⑤", "Quiz + ML Classify",  "Sinh câu hỏi & predict topic"),
+            ("01", "Upload audio", "MP3, WAV, M4A"),
+            ("02", "Transcribe", "Gemini speech-to-text"),
+            ("03", "Cleanup", "Chuan hoa va sua nhieu"),
+            ("04", "Summarize", "Trich xuat y chinh"),
+            ("05", "Quiz + ML Classify", "Sinh cau hoi va predict topic"),
         ]
-
-        for icon, title, hint in steps:
-            st.markdown(
-                f"""
-                <div style="display:flex;gap:0.7rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid #f2ede6">
-                    <span style="font-family:'DM Mono',monospace;font-size:0.82rem;color:#d97706;min-width:1.4rem;padding-top:0.05rem">{icon}</span>
-                    <div>
-                        <div style="font-size:0.86rem;font-weight:600;color:#1c1917;font-family:'DM Sans',sans-serif">{title}</div>
-                        <div style="font-size:0.76rem;color:#a8998c;margin-top:0.1rem;font-family:'DM Sans',sans-serif">{hint}</div>
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
+        for num, title, hint in steps:
+            render_html(
+                f"""<div style="display:flex;gap:.7rem;padding:.48rem 0;border-bottom:1px solid #f5f1ea">
+<span style="font-family:'SF Mono','Menlo',monospace;font-size:.7rem;color:#e07c12;min-width:1.6rem;padding-top:.05rem;font-weight:600">{num}</span>
+<div>
+<div style="font-size:.86rem;font-weight:600;color:#1a1714">{title}</div>
+<div style="font-size:.75rem;color:#a89e95;margin-top:.08rem">{hint}</div>
+</div>
+</div>"""
             )
 
-        st.markdown("<div style='height:0.4rem'></div>", unsafe_allow_html=True)
+        render_html("<div style='height:.3rem'></div>")
         st.markdown("---")
-
-        # Formats
-        st.markdown(
-            """
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#b45309;margin-bottom:0.55rem;font-family:'DM Sans',sans-serif">
-                Định dạng hỗ trợ
-            </div>
-            <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
-                <span style="background:#faf8f5;border:1px solid #e2d9cc;border-radius:5px;padding:0.2rem 0.6rem;font-family:'DM Mono',monospace;font-size:0.78rem;color:#7c6e62">MP3</span>
-                <span style="background:#faf8f5;border:1px solid #e2d9cc;border-radius:5px;padding:0.2rem 0.6rem;font-family:'DM Mono',monospace;font-size:0.78rem;color:#7c6e62">WAV</span>
-                <span style="background:#faf8f5;border:1px solid #e2d9cc;border-radius:5px;padding:0.2rem 0.6rem;font-family:'DM Mono',monospace;font-size:0.78rem;color:#7c6e62">M4A</span>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        render_html(
+            """<div style="font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c26a10;margin-bottom:.55rem">Dinh dang</div>
+<div style="display:flex;gap:.4rem">
+<span style="background:#f5f1ea;border:1px solid #e3ddd4;border-radius:5px;padding:.18rem .55rem;font-family:'SF Mono','Menlo',monospace;font-size:.77rem;color:#7a6f65">MP3</span>
+<span style="background:#f5f1ea;border:1px solid #e3ddd4;border-radius:5px;padding:.18rem .55rem;font-family:'SF Mono','Menlo',monospace;font-size:.77rem;color:#7a6f65">WAV</span>
+<span style="background:#f5f1ea;border:1px solid #e3ddd4;border-radius:5px;padding:.18rem .55rem;font-family:'SF Mono','Menlo',monospace;font-size:.77rem;color:#7a6f65">M4A</span>
+</div>"""
         )
-
         st.markdown("---")
-        st.caption(
-            "Transcript & tóm tắt được xử lý bởi **Gemini**. "
-            "Phân loại topic dùng Python ML model tự train."
-        )
+        st.caption("Gemini xu ly transcript va tom tat. Topic classification dung ML model Python tu train.")
